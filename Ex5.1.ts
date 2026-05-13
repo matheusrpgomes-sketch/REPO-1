@@ -13,7 +13,7 @@ function groupBy(array, key) {
     }
         
 groupBy(Cidade, `city`);
-
+aa
 */
 
 type cidade = {
@@ -28,7 +28,7 @@ const info: cidade[] = [
     { city: "Vitoria", nome: "Gabriel" }
 ]
 
-function groupBy<T>(array: T[], key: keyof T) { 
+export function groupBy<T>(array: T[], key: keyof T) { 
     const Reduce = array.reduce((grupo, item) => {
         const Chave = item[key] as string
 
@@ -42,5 +42,6 @@ function groupBy<T>(array: T[], key: keyof T) {
 
     console.log(Reduce)
 }
+// Exercicio 5 - groupBy generico
         
 groupBy(info, "city")
