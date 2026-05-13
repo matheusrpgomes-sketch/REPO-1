@@ -5,18 +5,20 @@
     O produto mais caro
     A lista de produtos com desconto de 10% aplicado'
 */
+// Exercicio 3 - map e reduce de produtos
+
     type product = {
         price: number
         name: string
     }
 const Produtos : product [] = [ {price: 10, name: `Manga`}, {price: 7, name:`Tomate`},{price: 1, name: `Morango`}, {price: 6, name:`Banana`},{price: 3, name: `Maca`}, {price: 2, name:`Pera`}
 ] 
-const total = Produtos.map(item => item.price)
+export const total = Produtos.map(item => item.price)
 console.log(total)
-const soma = total.reduce<number>((acc, curr) => acc + curr, 0)
-console.log("Valor da media é", soma/total.length)
+export const soma = total.reduce<number>((acc, curr) => acc + curr, 0)/total.length
+console.log("Valor da media é", soma)
 console.log("O item mais caro tem o valor de " )
-const caro = total.reduce<number>((Maior, Atual) => {   
+export const caro = total.reduce<number>((Maior, Atual) => {   
     if (Maior>Atual) {
        return Maior;
     }
@@ -26,4 +28,6 @@ const caro = total.reduce<number>((Maior, Atual) => {
 }, 0);
 console.log(`${caro}`,"É o item mais caro")
 
-console.log("Os produtos com 10% de desconto é ",total.map(item => item = item*0.9))
+export const val = total.map(item => item = item*0.9)
+
+console.log("Os produtos com 10% de desconto é ",val)
